@@ -1,11 +1,17 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactConfetti from "react-confetti";
 
 
 export default function Home() {
-  const [width, setWidth]   = useState(window.innerWidth);
-  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth]   = useState(1000);
+  const [height, setHeight] = useState(600);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+},[])
+
   return (
     <div>
       <div className="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div>
